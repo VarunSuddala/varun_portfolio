@@ -1,21 +1,23 @@
 .about {
-    background-color: var(--bg-card);
+    background-color: transparent;
+    position: relative;
 }
 
 .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
     position: relative;
     display: inline-block;
+    letter-spacing: -0.02em;
 }
 
 .section-title::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 0;
-    width: 60px;
-    height: 4px;
+    width: 40px;
+    height: 3px;
     background: var(--gradient-main);
     border-radius: 2px;
 }
@@ -23,45 +25,61 @@
 .about-content {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 4rem;
-    align-items: center;
+    gap: 6rem;
+    align-items: flex-start;
 }
 
 .about-text p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    font-weight: 300;
 }
 
 .highlight {
-    color: var(--text-primary);
+    color: #fff;
     font-weight: 500;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .education {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .education h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--accent-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: #fff;
 }
 
 .edu-item {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.edu-item strong {
     color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
 }
 
 .image-wrapper {
     position: relative;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     aspect-ratio: 1;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.image-wrapper:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .profile-img {
@@ -69,11 +87,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-}
-
-.image-wrapper:hover .profile-img {
-    transform: scale(1.05);
 }
 
 .image-wrapper::before {
@@ -84,20 +97,15 @@
     width: 100%;
     height: 100%;
     background: var(--accent-primary);
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: 1;
-    transition: opacity 0.3s ease;
     pointer-events: none;
-}
-
-.image-wrapper:hover::before {
-    opacity: 0;
 }
 
 .image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    background: linear-gradient(45deg, #0f0f0f, #181818);
     position: relative;
     display: flex;
     align-items: center;
@@ -105,20 +113,26 @@
 }
 
 .image-placeholder::after {
-    content: "Add profile.jpg to public folder";
+    content: "Add profile.jpg";
     color: var(--text-secondary);
-    text-align: center;
-    padding: 1rem;
     font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 4rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .image-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+        transform: rotate(0);
     }
 }

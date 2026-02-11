@@ -1,21 +1,26 @@
 :root {
-  --bg-dark: #050505;
-  --bg-card: #0a0a0a;
-  --bg-card-hover: #111111;
+  --bg-dark: #030303;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.04);
 
-  --text-primary: #ededed;
-  --text-secondary: #888888;
+  --text-primary: #f2f2f2;
+  --text-secondary: #a1a1a1;
   --text-accent: #6366f1;
 
   --accent-primary: #6366f1;
-  --accent-secondary: #a855f7;
-  --gradient-main: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  --gradient-glow: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+  --accent-secondary: #8b5cf6;
+  --gradient-main: linear-gradient(135deg, var(--accent-primary) 10%, var(--accent-secondary) 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, rgba(3, 3, 3, 0) 60%);
 
-  --font-main: 'Inter', system-ui, sans-serif;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 
   --transition-fast: 0.2s ease;
-  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
 }
 
 * {
@@ -31,12 +36,13 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -44,12 +50,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: #2a2a2a;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: #3a3a3a;
 }
 
 /* Typography Utilities */
@@ -59,9 +65,10 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  line-height: 1.1;
   font-weight: 600;
   color: #fff;
+  letter-spacing: -0.03em;
 }
 
 a {
@@ -79,9 +86,9 @@ button {
 
 /* Utility Classes */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .text-gradient {
@@ -92,14 +99,14 @@ button {
 }
 
 .section-padding {
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 
 /* Animation Classes */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s forwards;
+  transform: translateY(30px);
+  animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes fadeIn {
